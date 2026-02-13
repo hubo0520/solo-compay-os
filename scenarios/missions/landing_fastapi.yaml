@@ -1,0 +1,9 @@
+mission: |
+  Build a runnable demo web/API project for learners.
+  - Use FastAPI
+  - Provide / and /healthz
+  - Include tests
+  - Also output PRD + backlog + architecture + retro
+
+notes:
+  audience: beginners who want to learn agent skills + orchestration

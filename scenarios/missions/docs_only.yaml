@@ -1,0 +1,7 @@
+# Example mission file for Solo Company OS
+# You can pass this file path directly:
+#   solo-company run scenarios/missions/docs_only.yaml
+
+mission: |
+  Build a learning-only 'agent company' demo.
+  Output a PRD, a backlog, a simple architecture doc, and a short retrospective.
