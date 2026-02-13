@@ -17,6 +17,7 @@ from .core.providers.mock import MockProvider
 from .core.providers.openai_compatible import OpenAICompatibleProvider
 from .core.skill_index import DEFAULT_SKILL_DIRS, SkillIndex, discover_skills, validate_skills
 from .core.utils import default_run_dir
+from .dashboard import create_app
 from .integrations.skillsmp import SkillsMPClient
 
 app = typer.Typer(
@@ -56,6 +57,23 @@ def _resolve_mission_arg(mission: str) -> str:
             return m.strip()
         return p.read_text(encoding="utf-8").strip()
     return mission.strip()
+
+
+@app.command()
+def dashboard(
+    host: str = typer.Option("127.0.0.1", "--host", help="Dashboard host."),
+    port: int = typer.Option(8000, "--port", help="Dashboard port."),
+    run_root: Optional[Path] = typer.Option(
+        None,
+        "--run-root",
+        help="Runs root directory (default: ./runs).",
+    ),
+) -> None:
+    """Start the local dashboard server."""
+    import uvicorn
+
+    app_instance = create_app(run_root=run_root)
+    uvicorn.run(app_instance, host=host, port=port, log_level="info")
 
 
 @app.command()

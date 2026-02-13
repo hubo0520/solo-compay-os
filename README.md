@@ -275,6 +275,32 @@ solo-company skillsmp search "how to create a web scraper" --ai
 
 ---
 
+## 可视化（Dashboard）
+
+> 提供本地 Web Dashboard，用于实时查看任务提交、历史运行、Agent 分工与执行过程。
+
+### 启动方式
+
+```bash
+solo-company dashboard
+```
+
+默认访问地址：`http://127.0.0.1:8000`
+
+### 功能概览
+
+- **任务提交页**：输入 Mission，一键提交运行
+- **历史任务页**：查看所有运行记录与状态
+- **实时执行视图**：流式展示 Agent 接受指令、执行步骤、产物写入与协作信息流
+
+### 适合场景
+
+- 复盘完整的 Agent 工作流
+- 对比不同 Mission 的产出质量
+- 观察各 Agent 的角色分工与执行轨迹
+
+---
+
 ## License
 
 MIT
